@@ -1,0 +1,2 @@
+- attributes = (resource_class.attribute_names - %w(id created_at updated_at)).take(3)
+= render "index", attributes: attributes
