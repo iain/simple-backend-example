@@ -1,0 +1,4 @@
+%h2 Edit #{resource_class.model_name.human}
+
+- attributes = resource_class.attribute_names - %w(id created_at updated_at)
+= render "form", attributes: attributes

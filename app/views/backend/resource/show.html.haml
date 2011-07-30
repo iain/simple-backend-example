@@ -1,0 +1,4 @@
+%dl
+  - resource_class.attribute_names.each do |attr|
+    %dt= resource_class.human_attribute_name(attr)
+    %dd= resource.public_send(attr)
