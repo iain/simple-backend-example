@@ -1,0 +1,15 @@
+%dl
+  - resource_class.attribute_names.each do |attr|
+    %dt= resource_class.human_attribute_name(attr)
+    %dd= resource.public_send(attr)
+
+%h3 Widgets
+
+%ul
+  - resource.widgets.each do |widget|
+    %li
+      = link_to widget.name, backend_widget_path(widget)
+      (#{widget.active ? "active" : "inactive"})
+
+= content_for :actions do
+  %li= link_to "Deactivate widgets", backend_product_deactivate_widgets_path(@product), method: :post, confirm: "Widgets don't like to be deactivated."

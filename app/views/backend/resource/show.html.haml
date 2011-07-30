@@ -2,10 +2,7 @@
   .content
     %h2= resource_class.model_name.human
     .inner
-      %dl
-        - resource_class.attribute_names.each do |attr|
-          %dt= resource_class.human_attribute_name(attr)
-          %dd= resource.public_send(attr)
+      = render "show"
 
 = content_for :sidebar do
   .block
@@ -14,3 +11,4 @@
       %li= link_to "Back", collection_path
       %li= link_to "Edit", edit_resource_path
       %li= link_to "Destroy", resource_path, method: :delete, confirm: "Are you sure?"
+      = yield :actions

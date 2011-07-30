@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110730123743) do
+ActiveRecord::Schema.define(:version => 20110730140950) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20110730123743) do
     t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active",     :default => true, :null => false
   end
 
   add_index "widgets", ["product_id"], :name => "index_widgets_on_product_id"
