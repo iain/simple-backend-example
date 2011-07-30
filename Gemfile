@@ -23,6 +23,7 @@ gem 'inherited_resources'
 gem 'kaminari'
 gem 'has_scope', git: 'git://github.com/plataformatec/has_scope.git'
 gem 'haml'
+gem 'formalize-rails'
 
 
 # Use unicorn as the web server
