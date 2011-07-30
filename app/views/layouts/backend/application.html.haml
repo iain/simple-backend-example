@@ -18,6 +18,14 @@
             %li= link_to "Products", backend_products_path
       #wrapper.wat-cf
         .flash
+          - if flash[:alert]
+            .message.error
+              %p= flash[:alert]
+          - if flash[:notice]
+            .message.notice
+              %p= flash[:notice]
+
+
         #main
           = yield
           #footer
