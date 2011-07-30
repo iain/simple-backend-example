@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %title Simple Backend Example
+    = stylesheet_link_tag "backend"
+    = javascript_include_tag "backend"
+    = csrf_meta_tag
+  %body
+    #container
+      #header
+        %h1= link_to "Simple Backend Example", backend_root_path
+        #user-navigation
+          %ul.wat-cf
+            %li= link_to "Profile", "#"
+            %li= link_to "Settings", "#"
+        #main-navigation
+          %ul.wat-cf
+            %li= link_to "Products", backend_products_path
+      #wrapper.wat-cf
+        .flash
+        #main
+          = yield
+          #footer
+            .block
+              %p Copyright &copy; #{Time.now.year} Iain Hecker.
+        #sidebar
+          = yield :sidebar

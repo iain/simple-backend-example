@@ -1,19 +1,30 @@
-%table
-  %thead
-    %tr
-      - attributes.each do |attr|
-        %th= resource_class.human_attribute_name(attr)
-      %th &nbsp;
-  %tbody
-    - collection.each do |resource|
-      %tr[resource]
-        - attributes.each do |attr|
-          %td= resource.public_send(attr).to_s.truncate(20)
-        %td
-          = link_to 'show', resource_path(resource)
-          |
-          = link_to 'edit', edit_resource_path(resource)
-          |
-          = link_to 'destroy', resource_path(resource), method: :delete, confirm: "Are you sure?"
+.block
+  .content
+    %h2= resource_class.model_name.human(count: 2)
+    .inner
+      %table.table
+        %thead
+          %tr
+            - attributes.each do |attr|
+              %th= resource_class.human_attribute_name(attr)
+            %th &nbsp;
+        %tbody
+          - collection.each do |resource|
+            %tr[resource]
+              - attributes.each do |attr|
+                %td= resource.public_send(attr).to_s.truncate(20)
+              %td
+                = link_to 'show', resource_path(resource)
+                |
+                = link_to 'edit', edit_resource_path(resource)
+                |
+                = link_to 'destroy', resource_path(resource), method: :delete, confirm: "Are you sure?"
 
-= paginate collection
+      .actions-bar.wat-cf
+        = paginate collection
+
+= content_for :sidebar do
+  .block
+    %h3 Navigation
+    %ul.navigation
+      %li= link_to "New #{resource_class.model_name.human}", new_resource_path

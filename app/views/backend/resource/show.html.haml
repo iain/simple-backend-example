@@ -1,4 +1,16 @@
-%dl
-  - resource_class.attribute_names.each do |attr|
-    %dt= resource_class.human_attribute_name(attr)
-    %dd= resource.public_send(attr)
+.block
+  .content
+    %h2= resource_class.model_name.human
+    .inner
+      %dl
+        - resource_class.attribute_names.each do |attr|
+          %dt= resource_class.human_attribute_name(attr)
+          %dd= resource.public_send(attr)
+
+= content_for :sidebar do
+  .block
+    %h3 Navigation
+    %ul.navigation
+      %li= link_to "Back", collection_path
+      %li= link_to "Edit", edit_resource_path
+      %li= link_to "Destroy", resource_path, method: :delete, confirm: "Are you sure?"

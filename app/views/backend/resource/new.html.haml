@@ -1,6 +1,6 @@
 .block
   .content
-    %h2 Edit #{resource_class.model_name.human}
+    %h2 New #{resource_class.model_name.human}
 
     .inner
       - attributes = resource_class.attribute_names - %w(id created_at updated_at)
@@ -10,4 +10,4 @@
   .block
     %h3 Navigation
     %ul.navigation
-      %li= link_to "Back", resource_path
+      %li= link_to "Back", collection_path
