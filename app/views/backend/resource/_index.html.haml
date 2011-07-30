@@ -10,7 +10,7 @@
             %th &nbsp;
         %tbody
           - collection.each do |resource|
-            %tr[resource]
+            %tr[resource]{odd_or_even}
               - attributes.each do |attr|
                 %td= resource.public_send(attr).to_s.truncate(20)
               %td
