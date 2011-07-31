@@ -34,3 +34,11 @@
               %p Copyright &copy; #{Time.now.year} Iain Hecker.
         #sidebar
           = yield :sidebar
+          .block.notice
+            %h4 Simple Backend Example
+            %p This is an example of creating your own backend in Rails 3.1.
+            %p
+              Learn more about it on
+              = link_to "iain.nl", "http://iain.nl/backends-in-rails-3-1"
+              or find the source on
+              = link_to "github", "https://github.com/iain/simple-backend-example"
