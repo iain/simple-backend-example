@@ -14,7 +14,7 @@ end
 gem 'therubyracer'
 gem 'jquery-rails'
 
-gem 'simple_form'
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 gem 'inherited_resources'
 gem 'kaminari'
 gem 'has_scope', git: 'git://github.com/plataformatec/has_scope.git'

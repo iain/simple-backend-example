@@ -1,4 +1,6 @@
-= simple_form_for [ :backend, resource ] do |f|
-  - attributes.each do |attr|
-    = f.input attr
-  = f.submit
+= simple_form_for [ :backend, resource ], :wrapper => :inline do |f|
+  %fieldset
+    %legend Fields
+    - attributes.each do |attr|
+      = f.input attr
+  = f.submit :class => "primary"

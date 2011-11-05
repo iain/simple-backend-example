@@ -1,13 +1,9 @@
-.block
-  .content
-    %h2 New #{resource_class.model_name.human}
+- content_for :header do
+  %h1 New #{resource_class.model_name.human}
 
-    .inner
-      - attributes = resource_class.attribute_names - %w(id created_at updated_at)
-      = render "form", attributes: attributes
+%ul.tabs
+  %li= link_to "Index", collection_path
+  %li.active= link_to "New", "#"
 
-= content_for :sidebar do
-  .block
-    %h3 Navigation
-    %ul.navigation
-      %li= link_to "Back", collection_path
+- attributes = resource_class.attribute_names - %w(id created_at updated_at)
+= render "form", attributes: attributes

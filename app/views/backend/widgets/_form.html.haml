@@ -1,5 +1,9 @@
-= simple_form_for [ :backend, resource ] do |f|
-  = f.input :name
-  = f.association :product
-  = f.input :active
-  = f.submit
+= simple_form_for [ :backend, resource ], :wrapper => :inline do |f|
+  %fieldset
+    %legend Please enter some widget info
+    = f.input :name
+    = f.association :product
+    = f.input :active
+  .actions
+    = f.submit :class => "btn primary"
+    %button.btn{:type => "reset"} Cancel

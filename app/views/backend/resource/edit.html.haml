@@ -1,12 +1,11 @@
-.block
-  .content
-    %h2 Edit #{resource_class.model_name.human}
+- content_for :header do
+  %h1 Edit #{resource_class.model_name.human}
 
-    .inner
-      = render "form", attributes: attributes
+%ul.tabs
+  %li= link_to "Index", collection_path
+  %li= link_to "New", new_resource_path
+  %li= link_to "Show", resource_path
+  %li.active= link_to "Edit", "#"
+  %li= link_to "Destroy", resource_path, method: :delete, confirm: "Are you sure?"
 
-= content_for :sidebar do
-  .block
-    %h3 Navigation
-    %ul.navigation
-      %li= link_to "Back", resource_path
+= render "form", attributes: attributes
