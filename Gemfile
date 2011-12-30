@@ -16,7 +16,10 @@ gem 'jquery-rails'
 
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 gem 'inherited_resources'
+
 gem 'kaminari'
+gem 'bootstrap_kaminari'
+
 gem 'has_scope', git: 'git://github.com/plataformatec/has_scope.git'
 gem 'haml'
 # Use unicorn as the web server
